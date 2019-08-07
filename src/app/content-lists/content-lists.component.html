@@ -1,0 +1,111 @@
+<h2>Contents</h2>
+
+<li style="list-style-type: none" *ngFor="let content of contents; let i = index;">
+  <button *ngIf="isDeleteable == true" class="btn btn-danger" (click)="removeContent(content)"> X </button> 
+  {{i+1}}. {{content}}
+  <br>
+  <div *ngIf="isEditable == true">
+  <input type="text" [(ngModel)]="content">
+</div>
+</li>
+
+
+
+<!-- Show -->
+<br>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#showModal">
+  แสดง
+</button>
+
+
+<div class="modal fade" id="showModal" tabindex="-1" role="dialog" aria-labelledby="showModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="showModalLabel">Content detail</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Detail
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal" data-target="#editModal">
+          Edit
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Add -->
+
+<br><br>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">
+  เพิ่ม
+</button>
+
+
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addModalLabel">Add content</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <label for="content"></label>
+          <input type="text" #content placeholder="Add your content">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button (click)="addContent(content.value)" type="button" class="btn btn-primary">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Edit -->
+
+<br><br>
+<button (click)=toggleEdit()  type="button" class="btn btn-primary" data-toggle="modal">
+  แก้ไข
+</button>
+
+<br><br>
+<button (click)=toggleDelete() type="button" class="btn btn-primary" data-toggle="modal" >
+  ลบ
+</button>
+
+
+
+
+<!-- <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editModalLabel">Edit content</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <li style="list-style-type: none" *ngFor="let editcon of editcons; let i = index;">{{i+1}}.
+          <input type="text" [(ngModel)]="editcon">
+        </li>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button (click)="updateContent()" type="button" class="btn btn-primary">Update</button>
+      </div>
+    </div>
+  </div>
+</div> -->
