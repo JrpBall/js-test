@@ -1,25 +1,24 @@
-<form>
+<form method="post" action="register.php">
+    <h2>Register</h2>
     <div class="form-group">
-        <label for="exampleInputEmail1">Username</label>
-        <input type="text" class="form-control" id="exampleInputUsername1" aria-describedby="usernameHelp"
-            placeholder="Enter username">
-
-    </div>
-    <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Username" ng-model="regi.username"> 
     </div>
 
     <div class="form-group">
-        <label for="exampleInputNickname1">Nickname</label>
-        <input type="text" class="form-control" id="exampleInputNickname1" placeholder="Nickname">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Password" ng-model="regi.password">
     </div>
 
     <div class="form-group">
-        <label for="exampleInputEmail1">Email</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+        <label for="nickname">Nickname</label>
+        <input type="text" class="form-control" id="nickname" name="nickname" placeholder="Nickname" ng-model="regi.nickname">
     </div>
 
-    <button type="submit" class="btn btn-success">Register</button>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="regi.email">
+    </div>
 
+    <input type="submit" class="btn btn-success" value="Register">
 </form>

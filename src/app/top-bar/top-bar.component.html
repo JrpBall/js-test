@@ -1,12 +1,16 @@
-<a [routerLink]="['']">
-    <h1>Home</h1>
-</a>
+<header>
+        <nav class ="navbar navbar-expand-md navbar-dark bg-dark">
+        <div><a href="https://www.javainuse.com" class="navbar-brand"></a></div>
+        
+        <ul class="navbar-nav">
+            <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/"class="nav-link">Home</a></li>
+            <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/content" class="nav-link">ContentList</a></li>
+            <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">LogIn</a></li>
+            <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/userprofile" class="nav-link">Profile</a></li>
+            <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">LogOut</a></li>
 
+        </ul>
 
-<a [routerLink]="['/content','']">
-    <h1>Content list</h1>
-</a>
+    </nav>
 
-<a [routerLink]="['/login','']">
-    <h1>Login</h1>
-</a>
+</header>
